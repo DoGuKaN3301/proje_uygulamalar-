@@ -12,7 +12,7 @@ import time
 from gtts import gTTS
 import google.generativeai as genai
 import os
-genai.configure(api_key="AIzaSyCo8i8xIAdHJLetEHvb3_fNDI8b7uWxrkw")
+genai.configure(api_key="**")
 
 
 #site yönlendirmesi
