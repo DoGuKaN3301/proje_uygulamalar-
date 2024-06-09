@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- HTML belgesinin başlangıcı ve dil belirleyici (İngilizce) -->
+<head>
+    <meta charset="UTF-8"> <!-- Karakter kodlama seti -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın ekran genişliğine göre görüntüleme -->
+    <title>KULLANICI GÜNCELLE</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/kullanicign.css"> <!-- Özel CSS dosyası -->
+    <link rel="icon" href="/static/images/icons/user-128.ico" type="image/x-icon" />
+</head>
+<body>
+    <div class="container"> <!-- Ana konteyner -->
+        <div class="card"> <!-- Kart bileşeni -->
+            <div class="card-header"> <!-- Kart başlığı -->
+                KULLANICI BİLGİLERİ GÜNCELLE
+            </div>
+            <div class="card-body"> <!-- Kart içeriği -->
+                <form action="{{ url_for('kullanici_gnn') }}" method="post" enctype="multipart/form-data"> <!-- Form başlangıcı -->
+                    <label for="id">ID</label> <!-- ID etiketi -->
+                    <input type="text" id="id" name="id" value="{{ personel[0] }}" readonly> <!-- ID giriş alanı (salt okunur) -->
+
+                    <label for="ad">Ad</label> <!-- Ad etiketi -->
+                    <input type="text" id="ad" name="ad" value="{{ personel[1] }}" placeholder="Adınızı giriniz" required> <!-- Ad giriş alanı -->
+
+                    <label for="email">E-Mail</label> <!-- E-posta etiketi -->
+                    <input type="email" id="email" name="email" value="{{ personel[2] }}" placeholder="E-Mail giriniz" required> <!-- E-posta giriş alanı -->
+
+                    <label for="sifre">Şifre</label> <!-- Şifre etiketi -->
+                    <input type="password" id="sifre" name="sifre" value="{{ personel[3] }}" placeholder="Şifre giriniz" required> <!-- Şifre giriş alanı -->
+
+                    <label for="tur">TÜR</label> <!-- Tür etiketi -->
+                    <select id="tur" name="tur" required> <!-- Tür seçim alanı -->
+                        <option value="Admin" selected>Admin</option> <!-- Varsayılan olarak seçili olan yönetici seçeneği -->
+                        <option value="Kullanıcı">Kullanıcı</option> <!-- Kullanıcı seçeneği -->
+                    </select>
+
+                    <label for="bolum">BÖLÜM</label> <!-- Bölüm etiketi -->
+                    <select id="bolum" name="bolum" required> <!-- Bölüm seçim alanı -->
+                        <option value="Admin" selected>Admin</option> <!-- Varsayılan olarak seçili olan yönetici bölümü seçeneği -->
+                        <option value="Gıda">Gıda</option> <!-- Gıda bölümü seçeneği -->
+                        <option value="Ziraat">Ziraat</option> <!-- Ziraat bölümü seçeneği -->
+                        <option value="Yazılım">Yazılım</option> <!-- Yazılım bölümü seçeneği -->
+                        <option value="Bilgisayar">Bilgisayar</option> <!-- Bilgisayar bölümü seçeneği -->
+                    </select>
+
+                    <button type="submit">Güncelle</button> <!-- Formu gönder butonu -->
+                    {% if hata %} <!-- Hata mesajı varsa -->
+                        <p class="error">{{ hata }}</p> <!-- Hata mesajını göster -->
+                    {% endif %}
+                </form> <!-- Form bitişi -->
+            </div> <!-- Kart içeriği bitişi -->
+        </div> <!-- Kart bileşeni bitişi -->
+    </div> <!-- Ana konteyner bitişi -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- HTML belgesinin dilini belirten etiket -->
+<head>
+    <meta charset="UTF-8"> <!-- Metin kodlamasını belirten etiket -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın genişliğine ve ölçeğine uyum sağlayan etiket -->
+    <title>Admin</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/erisim.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">           <!-- Font Awesome ikonlarının CSS dosyasını çağırır -->          
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">           <!-- Font Awesome ikonlarının CSS dosyasını çağırır -->          
+    <link rel="icon" href="/static/images/icons/administration-vector-icon.ico" type="image/x-icon" />                <!-- Favicon (sayfa ikonu) -->
+
+</head>
+
+    <ul>
+    {% if kullaniciadi %}                               <!-- Eğer bir kullanıcı adı varsa -->
+        <p id="kullanici">{{ kullaniciadi }} </p>           <!-- Kullanıcı adını görüntüler -->
+    {% endif %}
+    
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a>               <!-- Ana sayfaya dönüş linki ve logo --> 
+        <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li> <!-- Anasayfa linki --> 
+        
+        
+        <li id ="grs" ><a href="{{ url_for('giris') }}"><i class="fas fa-home ev-icon"> </i></a></li>             <!-- Giriş sayfası linki -->
+        <a href="{{ url_for('cikis') }}" id="cıkıs">CIKIŞ</a>        <!-- Çıkış linki -->
+        <div id="saat"></div>                 <!-- Saat divi -->
+    </ul>
+
+
+
+
+<!-- adminlerin tüm sitelere erişecek olduğu site  -->
+<div class="overlay"> <!-- Geçici bir arka plan oluşturan overlay -->
+    <body id="index_arkaplan" background="/static/images/indir.jpg"> <!-- Arka plan resmi -->
+    
+        </div>     
+    <div class="container"> <!-- Ana bileşeni oluşturan div etiketi -->
+        <a href="{{ url_for('muhyazilim') }}">Yazılım - Bilgisayar</a>   <!-- Yazılım sayfasına yönlendiren bağlantı -->
+        <a href="{{ url_for('gida') }}">Gıda</a> <!-- Gıda sayfasına yönlendiren bağlantı -->
+        <a href="{{ url_for('ziraat') }}">Ziraat</a> <!-- Ziraat sayfasına yönlendiren bağlantı -->
+    </div>
+    <script src="/static/js/script.js"></script> <!-- Harici JavaScript dosyasını ekleyen etiket -->
+</body>
+</html>

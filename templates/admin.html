@@ -1,0 +1,38 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- Sayfanın dilini belirten etiket -->
+<head>
+    <meta charset="UTF-8"> <!-- Metin kodlamasını belirten etiket -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın genişliğine ve ölçeğine uyum sağlayan etiket -->
+    <title>Admin Control Panel</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/admin.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="icon" href="/static/images/icons/setting.ico" type="image/x-icon" />
+</head>
+<div class="container"> <!-- Bir ana bileşen oluşturan div etiketi -->
+<div class="overlay"> <!-- Bir arka plan katmanı oluşturan div etiketi -->
+<body id="index_arkaplan" background="/static/images/indir.jpg"> <!-- Sayfa arka planını belirleyen etiket -->
+</div>   
+    <h1>Admin Control Panel</h1> <!-- Başlık -->
+    <div class="card">
+        <h2>KULLANICI YÖNETİMİ</h2> <!-- Başlık -->
+        <p>KULLANICILARI YÖNETMEK , BİLGİLERİNİ DEĞİŞTİRMEK VEYA SİLMEK İÇİN TIKLAYINIZ</p> <!-- Açıklama -->
+        <a href="{{ url_for('kullanici_bilgileri') }}" class="button">KULLANICILARI YÖNET</a> <!-- Kullanıcı yönetimi için bağlantı -->
+    </div>
+
+    <div class="card">
+        <h2>KULLANICI EKLE</h2> <!-- Başlık -->
+        <p>YENİ KULLANICI EKLEMEK İÇİN TIKLAYINIZ</p> <!-- Açıklama -->
+        <a href="{{ url_for('kullanici_ekle') }}" class="button">YENİ KULLANICI EKLE</a> <!-- Yeni kullanıcı ekleme için bağlantı -->
+    </div>
+
+    <div class="card">
+        <h2>Duyuru</h2> <!-- Başlık -->
+        <p>Duyuru yapmak için Tıklayınız.(KAPALI)</p> <!-- Açıklama -->
+        <a href="" class="button">Duyuru</a> <!-- Duyuru için bağlantı -->
+    </div>
+    <div>
+        <a href="{{ url_for('anasayfa') }}" class="button" id="geri">ANASAYFA</a> <!-- Anasayfa için bağlantı -->
+        <a href="{{ url_for('cikis') }}" class="button" id="geri">CIKIŞ</a> <!-- Çıkış için bağlantı -->
+    </div>
+</div>
+</body>
+</html>

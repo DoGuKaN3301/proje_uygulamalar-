@@ -1,0 +1,48 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html> <!-- HTML başlangıç etiketi -->
+<head> 
+	<title>C++ IDE</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/ide.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="stylesheet" href="/static/css//yuklen_c++.css">
+    <link rel="icon" href="/static/images/icons/C_Logo.ico" type="image/x-icon" />
+</head>
+<body> <!-- Sayfa içeriği başlangıcı -->
+
+  <div id = "loading">
+  <div class="🤚">
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="🌴"></div>		
+    <div class="👍"></div>
+  </div>
+</div>
+  <div id="content" style="display: none;">
+
+    <ul> <!-- Sıralı liste başlangıcı -->
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a> <!-- Anasayfaya yönlendiren resim bağlantısı -->
+        {% if kullaniciadi %} <!-- Kullanıcı adı kontrolü -->
+            <p id="kullanici">{{ kullaniciadi }}</p> <!-- Kullanıcı adı görüntüleme -->
+        {% endif %}
+        <li class="dropdown"> <!-- Dropdown menü başlangıcı -->
+          <a href="javascript:void(0)" class="dropbtn">Yazılım Dilleri</a> <!-- Dropdown butonu -->
+          <div class="dropdown-content"> <!-- Dropdown içeriği başlangıcı -->
+            <a href="{{ url_for('python') }}">Python</a> <!-- Python sayfasına yönlendiren bağlantı -->
+            <a href="{{ url_for('c_plus') }}">C++/C</a> <!-- C++/C sayfasına yönlendiren bağlantı -->
+            <a href="{{ url_for('c_sharp') }}">C#</a> <!-- C# sayfasına yönlendiren bağlantı -->
+            <a href="{{ url_for('php') }}">PHP</a> <!-- PHP sayfasına yönlendiren bağlantı -->
+          </div>
+        </li>
+
+        <div id="saat"></div> <!-- Saat bilgisini içeren div -->
+
+      </ul> <!-- Sıralı liste sonu -->
+
+      <iframe src="https://www.jdoodle.com/embed/v1/1494f85faee1ff76" width="100%" height="650" frameborder="0" marginwidth="0" marginheight="0"></iframe> <!-- JDoodle embed kodunu içeren iframe -->
+
+      <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script> <!-- JDoodle script etiketi -->
+      <script src="/static/js/script.js"></script> <!-- Harici JavaScript dosyasını ekleyen etiket -->
+</body> <!-- Sayfa içeriği sonu -->
+
+</html> <!-- HTML belgesi sonu -->

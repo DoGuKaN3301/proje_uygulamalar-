@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- HTML belgesinin dilini belirten etiket -->
+<head>
+    <meta charset="UTF-8"> <!-- Metin kodlamasını belirten etiket -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın genişliğine ve ölçeğine uyum sağlayan etiket -->
+    <title>GIDA EKLE</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/gidagn.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="icon" href="/static/images/icons/gıda.ico" type="image/x-icon" /> <!--gıda bölümünün sayfasına icon ekler-->
+</head>
+<body>
+    <div class="container"> <!-- Ana bileşeni oluşturan div etiketi -->
+        <div class="card"> <!-- Kart bileşeni başlangıcı -->
+            <div class="card-header"> <!-- Kart başlığı -->
+                YENİ GIDA EKLE
+            </div>
+            <div class="card-body"> <!-- Kartın içeriği -->
+                <form action="{{ url_for('gida_ekle') }}" method="post" enctype="multipart/form-data"> <!-- Form başlangıcı -->
+                    <label for="ad">Ad</label> <!-- Ad alanı etiketi -->
+                    <input type="text" id="ad" name="ad" placeholder="Gıda adını giriniz" required> <!-- Ad alanı -->
+                    <label for="kalori">Kalori</label> <!-- Kalori alanı etiketi -->
+                    <input type="text" id="kalori" name="kalori" placeholder="Kalori değerini giriniz" required> <!-- Kalori alanı -->
+                    <label for="durum">Durum</label> <!-- Durum seçimi etiketi -->
+                    <select id="durum" name="durum" required> <!-- Durum seçimi -->
+                        <option value="yararlı" selected>Yararlı</option> <!-- Yararlı seçeneği -->
+                        <option value="zararlı">Zararlı</option> <!-- Zararlı seçeneği -->
+                    </select>
+                    <select id="durum" name="katogori" required> <!-- Kategori seçimi -->
+                        <option value="meyve" selected>Meyve</option> <!-- Meyve seçeneği -->
+                        <option value="sebze">Sebze</option> <!-- Sebze seçeneği -->
+                        <option value="içecek">içecek</option> <!-- İçecek seçeneği -->
+                        <option value="fast-food">fast-food</option> <!-- Fast food seçeneği -->
+                    </select>
+                    <button type="submit" id="ekle">Ekle</button> <!-- Ekle düğmesi -->
+                    {% if hata %} <!-- Hata kontrolü -->
+                        <p class="error">{{ hata }}</p> <!-- Hata mesajı -->
+                    {% endif %}
+                </form> <!-- Form sonu -->
+            </div> <!-- Kartın içeriği sonu -->
+        </div> <!-- Kart bileşeni sonu -->
+    </div> <!-- Ana bileşenin sonu -->
+</body>
+</html>

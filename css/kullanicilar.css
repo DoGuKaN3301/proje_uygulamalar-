@@ -1,0 +1,57 @@
+#personell{
+    display: flex;
+    justify-content: center;
+    
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 55px;
+
+}
+
+.card {
+    width: 330px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-footer {
+    padding: 10px;
+    text-align: center;
+}
+#kl{
+text-decoration: none;
+border-radius: 7px;
+text-align: center;
+
+}
+
+#a{
+background-color: rgb(122, 222, 132);
+height: 35px;
+border-radius: 10px;
+}
+
+
+
+.buton{
+    text-decoration: none;
+    background-color: rgb(62, 62, 119) ;
+    color: #ccc;
+    border-radius: 5px;
+    padding: 5px 15px;
+
+}

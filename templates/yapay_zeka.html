@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapay Zeka</title>
+    <link rel="stylesheet" href="/static/css/yapay_zeka.css">
+    <link rel="icon" href="/static/images/icons/yapayc1.ico" type="image/x-icon"/>
+</head>
+<body>
+    <h1>Yapay Zeka</h1>
+    <form action="/process" method="POST">
+        <input type="submit" value="Başlat">
+    </form>
+    {% if soru %}
+        <p>{{ soru }}</p>
+    {% endif %}
+
+    {% if response %}
+        <p>{{ response }}</p>
+    {% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+h1{
+    background-color: #333;
+    text-align: center;
+    height: 45px;
+    border-radius: 25px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-body {
+    padding: 15px;
+    background-color: antiquewhite;
+}
+
+.card-footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+}
+
+.card-footer .button {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.card-footer .button:hover {
+    background-color: #eee;
+}
+/* Ekle butonu stilini güncelle */
+#gida_ekle{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Dikey olarak ortala */
+    text-decoration: none;
+    background-color: bisque;
+    border-radius: 10px;
+    height: 40px;
+    width: 550px;
+    font-size: 22px;
+    margin: 0 auto; /* Yatay olarak ortala */
+    transition: background-color 0.3s ease-in-out; /* Arka plan geçiş efekti */
+    margin-top: 50px;
+}
+
+#gida_ekle:hover {
+    background-color: #ccc;
+}
+
+.buton{
+    text-decoration: none;
+    color: #f00505;
+    text-align: center;
+    
+  }

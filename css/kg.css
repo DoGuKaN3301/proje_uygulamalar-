@@ -1,0 +1,210 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image: url('background.jpg'); /* Arka plan resmi */
+	background-size: cover;
+	background-position: center;
+	background-color: #efe1ed
+	
+  }
+  
+  .login-container {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	max-width: 600px;
+	width: 500%;
+	height: 400px;
+	background-image: inherit;
+	border: 9px solid transparent; /* Sınır rengini şeffaf olarak ayarla */
+	background-color: #f9f6f6
+  }
+  
+  
+  .login-form {
+	text-align:letf;
+	margin-top: 16%;
+  }
+  
+  .login-form h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: #333;
+  }
+  
+  .input-group {
+	margin-bottom: 20px;
+	margin-bottom: 10px;
+	width: 100%;
+  }
+  
+  .input-group input {
+	width: 50%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 60px;
+	font-size: 16px;
+  }
+  
+  button {
+	width: 30%;
+	padding: 12px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 60px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+	background-color: #0056b3;
+  }
+  
+  .signup-link {
+	margin-top: 20px;
+  }
+  
+  .signup-link a {
+	color: #007bff;
+	text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+	text-decoration: underline;
+  }
+
+.input-group {
+	margin-top: 15px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	/* padding-left: 10px; /* İconun sol boşluk bırakması için */
+	width: 100%;
+	display: flex;
+}
+
+.input-group i {
+	color: #aaa;
+	position: absolute;
+  }
+ 
+.icon {
+	padding: 14px;
+	min-width: 40px;
+}
+
+.toggle-password{
+	position: fixed;
+	margin-top:13px;
+	margin-left: 16.5%;	
+}
+
+
+
+
+  .input-group input {
+	/* width: calc(50% - 40px); /* Iconun genişliği kadar sağ ve sol boşluk bırakmak için 
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 60px;
+	font-size: 16px; */
+	padding-left: 35px; /* Iconun inputa olan mesafesi + input sol padding */
+  }
+
+  .input-field {
+	width: 100%;
+	padding: 10px;
+	text-align: left;
+}
+
+#resim{
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 75%;
+	top: 70%;
+	margin-top: -100px;
+	margin-left: -100px;
+	
+	border-radius: 200px;
+	border: 9px solid transparent; /* Sınır rengini şeffaf olarak ayarla */
+}
+
+#resim1{
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 90%;
+	top: 30%;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 7px solid rgb(21, 247, 255);
+	border-radius: 50px;
+
+}
+
+#resim2{
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 10%;
+	top: 15%;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 7px solid rgb(204, 255, 21);
+	border-radius: 100px;
+
+}
+
+#resim3{
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 15%;
+	top: 70%;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 7px solid rgb(21, 255, 72);
+	border-radius: 50px;
+}
+
+#resim5{
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 55%;
+	top: 12%;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 7px solid rgb(181, 21, 255);
+	border-radius: 50px;
+}
+
+#resim6{
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 45%;
+	top: 87%;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 7px solid rgb(255, 21, 21);
+	border-radius: 200px;
+}
+
+.resimler{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 7px solid transparent; /* Sınır rengini şeffaf olarak ayarla */
+  border-radius: 50%; /* Resmi yuvarlak yap */
+  animation: hareket-et 10s infinite linear, sınır-renk-degistir 5s infinite; /* Hareket ve sınır rengi değiştirme animasyonları */
+}
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <title>Yazılım - Bilgisayar Mühendisi</title>                              <!-- Başlık -->
+<head>
+  <script src="/static/js/script.js"></script>                  <!-- Harici JavaScript dosyasını çağırır -->
+<link rel="stylesheet" href="/static/css/yazilimmuhendisi.css">            <!-- Harici CSS dosyalarını çağırır -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">           <!-- Font Awesome ikonlarının CSS dosyasını çağırır -->          
+<link rel="icon" href="/static/images/icons/masaustu-bilgisayar.ico" type="image/x-icon" />                <!-- Favicon (sayfa ikonu) -->
+
+
+</head>
+<div class="overlay">                                                         <!-- Sayfa arka planı için overlay divi oluşturulur -->
+  <body id="index_arkaplan" background="/static/images/indir.jpg">            <!-- Sayfa arka planı resmi -->
+</div>
+<ul>
+  {% if kullaniciadi %}                               <!-- Eğer bir kullanıcı adı varsa -->
+  <p id="kullanici">{{ kullaniciadi }} </p>           <!-- Kullanıcı adını görüntüler -->
+  {% endif %}
+
+  <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a>               <!-- Ana sayfaya dönüş linki ve logo -->  
+  <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li> <!-- Anasayfa linki -->
+  
+    
+  <li id ="grs" ><a href="{{ url_for('giris') }}"><i class="fas fa-home ev-icon"> </i></a></li>             <!-- Giriş sayfası linki -->
+  <a href="{{ url_for('cikis') }}" id="cıkıs">CIKIŞ</a>        <!-- Çıkış linki -->
+  <div id="saat"></div>                 <!-- Saat divi -->
+</ul>
+
+<div class="container"> <!-- Ana bileşeni oluşturan div etiketi -->
+  <a href="{{ url_for('python') }}">Python</a>   <!-- Yazılım sayfasına yönlendiren bağlantı -->
+  <a href="{{ url_for('c_sharp') }}">C#</a> <!-- Bilgisayar sayfasına yönlendiren bağlantı -->
+  <a href="{{ url_for('c_plus') }}">C++</a> <!-- Gıda sayfasına yönlendiren bağlantı -->
+  <a href="{{ url_for('php') }}">PHP</a> <!-- Ziraat sayfasına yönlendiren bağlantı -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #aa3838; */
+  color : #333;
+  justify-content: left;
+  display: flex;
+  border-radius: 10px;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: rgb(30, 55, 178);
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 15px;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(152, 221, 5);
+  width: 75%;
+  justify-content: center ;
+  height: 19px;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7777af;
+  /* min-width: 170px; */
+  box-shadow: 0px 0px 0px 5px rgba(232, 17, 5, 0.2);
+  z-index: 1;
+  border-radius: 12px;
+  width: 240px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f00505;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#grs1{
+  position: fixed;
+  color: #ffffff; /* Yazı rengi */
+  border-radius: 5px; /* Kenar yumuşatma */
+  cursor: pointer; /* Fare işaretçisinin üzerine gelince el şeklinde olmasını sağlar */
+  font-size: 2px; /* Yazı boyutu */
+  margin-left: 1500px;
+}
+#grs{
+  position: fixed; /* Sayfa boyutundan bağımsız olarak sabit konumda kalmasını sağlar */
+  top: 11px; /* Sayfanın üst kısmından 20 piksel mesafede olmasını sağlar */
+  right: 35px; /* Sayfanın sağ kısmından 20 piksel mesafede olmasını sağlar */
+  /* padding: 10px 20px; Düğme içeriğinin kenar boşluklarını belirler */
+  color: #ffffff; /* Yazı rengi */
+  border: none; /* Kenarlık olmamasını sağlar */
+  border-radius: 10px; /* Kenar yumuşatma */
+  cursor: pointer; /* Fare işaretçisinin üzerine gelince el şeklinde olmasını sağlar */
+  font-size:5px; /* Yazı boyutu */
+  z-index: 999; /* Diğer içeriklerin üstünde olmasını sağlar */
+  height: 42px;
+  align-items: center;
+  display: flex;
+  /* background-color: rgba(7, 216, 223, 0.871); */
+  animation: changeBackgroundColor 5s infinite; /* Animasyonun 5 saniye süreceği ve sonsuz döngüde olacağı belirtiliyor */
+ position: sticky;
+ margin-left: 95%;
+}
+
+.bildir{
+  margin-top: 700px;
+}
+/* 
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: rgba(7, 216, 223, 0.871);  Başlangıç arka plan rengi 
+  }
+  50% {
+    background-color: rgba(223, 7, 163, 0.871); /* Orta noktadaki arka plan rengi 
+  }
+  100% {
+    background-color: rgba(223, 142, 7, 0.871); /* Bitiş arka plan rengi 
+  }
+} */
+
+#navbarrsm{
+  width: 50px;
+  height: 47px;
+  border-radius: 10px;
+}
+
+#giris.hover{
+  background-color: rgb(121, 9, 234);
+}
+
+#giris_div{
+  background-color: rgb(184, 8, 131);
+  width: 250px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  border-radius: 10%;
+  font-size: 10px;
+  
+}
+
+
+body {
+  /* background-image: url('/static/images/indir.jpg'); */
+  background-repeat:no-repeat;
+  background-position: center top;
+  
+ 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background-color: white; /* Beyaz bir renk katmanı ekleyin */
+  opacity: 0.9; /* Opaklık değeri 0 ile 1 arasında olmalıdır */
+  z-index: -1; /* Arka plan resminin altında kalacak şekilde z-index ayarı */
+
+}
+
+
+  
+
+
+
+
+/* saat için css kodları */
+
+
+#saat {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Saat rengi */
+  /* İstenilen diğer stiller */
+  margin-top: 12px;
+  display:flex;
+  position:absolute;
+  margin-left: 45%;
+
+}
+
+
+
+
+
+/* ev iconu içi kodlar */
+
+.ev-icon {
+  font-size: 24px; /* İkonun boyutunu istediğiniz gibi ayarlayabilirsiniz */
+  color: #333; /* İkonun rengini istediğiniz gibi ayarlayabilirsiniz */
+  animation: bounce 0.5s infinite alternate; /* Zıplama animasyonu */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+    /* background-color: #ff0000; Başlangıç arka plan rengi */
+  }
+  100% {
+    transform: translateY(-10px);
+    /* background-color: #00ff00; Bitiş arka plan rengi */
+  }
+}
+
+
+
+#kullanici{
+  display: block;
+  margin-top: 20px;
+  color: rgb(4, 0, 255);
+  border-radius: 10px;
+  margin-left: 89%;
+  position: absolute;
+  font-size: 22px;
+}
+#cık{
+  display: block;
+  text-decoration: none;
+  margin-top: 10px;
+  color: #f00505;
+  border-radius: 10px;
+  margin-left: 95%;
+  position: absolute;
+  font-size: 20px;
+}
+
+.buton{
+  text-decoration: none;
+  color: #f00505;
+  text-align: center;
+  
+}
+#sorgu {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+select{
+  font-size: 18px; /* İstenilen boyutu ayarlayabilirsiniz */
+  padding: 10px; /* Seçenek kutusunun içeriğinden dışarı doğru boşluk */
+  width: 200px; /* Seçenek kutusunun genişliği */
+  height: 45px; /* Seçenek kutusunun yüksekliği */
+}
+
+
+#ekle_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Dikey olarak ortala */
+  text-decoration: none;
+  background-color: bisque;
+  border-radius: 10px;
+  height: 40px;
+  width: 520px;
+  font-size: 25px;
+  margin: 0 auto; /* Yatay olarak ortala */
+  transition: background-color 0.3s ease-in-out; /* Arka plan geçiş efekti */
+  margin-top: 50px;
+}
+
+#ekle_btn:hover {
+  background-color: #ccc;
+}
+#sorgula_buton{
+  padding: 10px; /* Seçenek kutusunun içeriğinden dışarı doğru boşluk */
+  width: 150px; /* Seçenek kutusunun genişliği */
+  height: 45px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+body {
+  /* background-image: url('/static/images/indir.jpg'); */
+  background-repeat:no-repeat;
+  background-position: center top 50%; /* arka planı biraz aşağıya alır  */
+  height: 900px;
+ 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background-color: white; /* Beyaz bir renk katmanı ekleyin */
+  opacity: 0.9; /* Opaklık değeri 0 ile 1 arasında olmalıdır */
+  z-index: -1; /* Arka plan resminin altında kalacak şekilde z-index ayarı */
+
+}
+
+#index_arkaplan {
+  background-attachment: fixed;
+} 
+
+
+#hata_msj{
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+} 
+  

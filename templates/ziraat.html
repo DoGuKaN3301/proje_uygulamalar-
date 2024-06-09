@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Karakter seti ve cihaz genişliği için meta etiketleri -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sayfa başlığı -->
+    <title>Ziraat</title>
+    <!-- Harici CSS dosyaları bağlanır -->
+    <link rel="stylesheet" href="/static/css/sty.css">
+    <link rel="stylesheet" href="/static/css/ziraat.css">
+    <!-- Harici JavaScript dosyası bağlanır -->
+    <script src="/static/js/script.js"></script>
+    <!-- Favicon (sayfa ikonu) -->
+    <link rel="icon" href="/static/images/icons/depositphotos_47088997-stock-illustration-abstract-wheat-ears-icon-with.ico" type="image/x-icon" />
+</head>
+<!-- Sayfa arka planı belirlenir -->
+        <div class="overlay"> <!-- Geçici bir arka plan oluşturan overlay -->
+    <body id="index_arkaplan" background="/static/images/indir.jpg"> <!-- Arka plan resmi -->
+    
+    </div> 
+    <ul>
+        <!-- Kullanıcı adı varsa gösterilir -->
+        {% if kullaniciadi %}
+        <p id="kullanici">{{ kullaniciadi }} </p>
+      {% endif %}
+      <!-- Çıkış linki -->
+      <div id = "cık">
+        <a href="{{ url_for('cikis') }}" id = "cık" >CIKIŞ</a>
+      </div>
+        
+        <!-- Ana sayfa linki ve logo -->
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/indir.jpg" id="navbarrsm" alt=""></a>
+        <!-- Menü öğeleri -->
+        <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li>
+        <div id="saat"></div>
+    </ul>
+    <!-- Başlık -->
+    <header>
+        <h1>Ziraat</h1>
+    </header>
+    <!-- Meyveler için konteyner -->
+    <div class="container" id="fruitsContainer">
+        <!-- Meyveler buraya dinamik olarak eklenecek -->
+    </div>
+
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}                                                       <!-- sayfaya hata mesajı göndermek içn kullanılır-->
+            {% for category, message in messages %}
+                <p class="{{ category }}" id = "hata_msj">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+
+
+
+
+    <!-- Ziraat bilgileri kartları -->
+    <div class="container">
+        {% for z in ziraat %}
+        <div class="card">
+            <!-- Kart başlığı -->
+            <div class="card-header">
+                ID: {{ z[0] }}
+            </div>
+            <!-- Kart içeriği -->
+            <div class="card-body">
+                <!-- Ziraat bilgileri -->
+                <p><strong>Ad:</strong> {{ z[1] }}</p>
+                <p><strong>Ekim Zamanı:</strong> {{ z[2] }}</p>
+                <p><strong>Gübre:</strong> {{ z[3] }}</p>
+                <p><strong>Alınan Mahsul (TON):</strong> {{ z[4] }}</p>
+                <p><strong>İl:</strong> {{ z[5] }}</p>
+            </div>
+            <!-- Kart alt kısmı (butonlar) -->
+            <div class="card-footer">
+                <!-- Güncelleme ve silme butonları -->
+                <a href="/ziraat/guncelle/{{ z[0] }}" class="buton">Güncelle</a>
+                <a href="/ziraat/sil/{{ z[0] }}" class="buton">Sil</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Ziraat sorgulama formu -->
+    <div id="sorgu">
+        <form action="{{ url_for('ziraat_sorgu') }}" method="post">
+            <!-- Ekim zamanı seçimi -->
+            <select id="ekim_zamanı" name="ekim_z" required>
+                    <option value="none1">Ay Seçin</option>
+                    <option value="Ocak">Ocak</option>
+                    <option value="şubat">Şubat</option>
+                    <option value="Mart">Mart</option>
+                    <option value="nisan">Nisan</option>
+                    <option value="mayıs">Mayıs</option>
+                    <option value="haziran">Haziran</option>
+                    <option value="temmuz">Temmuz</option>
+                    <option value="ağustos">Ağustos</option>
+                    <option value="eylül">Eylül</option>
+                    <option value="ekim">Ekim</option>
+                    <option value="kasım">Kasım</option>
+                    <option value="aralık">Aralık</option>
+                </select>
+                <!-- il seçimi -->
+                <select id="katogori" name="il">
+                    <option value="none">İl Seçin</option>
+                    <option value="Adana">Adana</option>
+                    <option value="Adıyaman">Adıyaman</option>
+                    <option value="Afyonkarahisar">Afyonkarahisar</option>
+                    <option value="Ağrı">Ağrı</option>
+                    <option value="Amasya">Amasya</option>
+                    <option value="Ankara">Ankara</option>
+                    <option value="Antalya">Antalya</option>
+                    <option value="Ardahan">Ardahan</option>
+                    <option value="Artvin">Artvin</option>
+                    <option value="Aydın">Aydın</option>
+                    <option value="Balıkesir">Balıkesir</option>
+                    <option value="Bartın">Bartın</option>
+                    <option value="Batman">Batman</option>
+                    <option value="Bayburt">Bayburt</option>
+                    <option value="Bilecik">Bilecik</option>
+                    <option value="Bingöl">Bingöl</option>
+                    <option value="Bitlis">Bitlis</option>
+                    <option value="Bolu">Bolu</option>
+                    <option value="Burdur">Burdur</option>
+                    <option value="Bursa">Bursa</option>
+                    <option value="Çanakkale">Çanakkale</option>
+                    <option value="Çankırı">Çankırı</option>
+                    <option value="Çorum">Çorum</option>
+                    <option value="Denizli">Denizli</option>
+                    <option value="Diyarbakır">Diyarbakır</option>
+                    <option value="Düzce">Düzce</option>
+                    <option value="Edirne">Edirne</option>
+                    <option value="Elazığ">Elazığ</option>
+                    <option value="Erzincan">Erzincan</option>
+                    <option value="Erzurum">Erzurum</option>
+                    <option value="Eskişehir">Eskişehir</option>
+                    <option value="Gaziantep">Gaziantep</option>
+                    <option value="Giresun">Giresun</option>
+                    <option value="Gümüşhane">Gümüşhane</option>
+                    <option value="Hakkari">Hakkari</option>
+                    <option value="Hatay">Hatay</option>
+                    <option value="Iğdır">Iğdır</option>
+                    <option value="Isparta">Isparta</option>
+                    <option value="İstanbul">İstanbul</option>
+                    <option value="İzmir">İzmir</option>
+                    <option value="Kahramanmaraş">Kahramanmaraş</option>
+                    <option value="Karabük">Karabük</option>
+                    <option value="Karaman">Karaman</option>
+                    <option value="Kars">Kars</option>
+                    <option value="Kastamonu">Kastamonu</option>
+                    <option value="Kayseri">Kayseri</option>
+                    <option value="Kilis">Kilis</option>
+                    <option value="Kırıkkale">Kırıkkale</option>
+                    <option value="Kırklareli">Kırklareli</option>
+                    <option value="Kırşehir">Kırşehir</option>
+                    <option value="Kocaeli">Kocaeli</option>
+                    <option value="Konya">Konya</option>
+                    <option value="Kütahya">Kütahya</option>
+                    <option value="Malatya">Malatya</option>
+                    <option value="Manisa">Manisa</option>
+                    <option value="Mardin">Mardin</option>
+                    <option value="Mersin">Mersin</option>
+                    <option value="Muğla">Muğla</option>
+                    <option value="Muş">Muş</option>
+                    <option value="Nevşehir">Nevşehir</option>
+                    <option value="Niğde">Niğde</option>
+                    <option value="Ordu">Ordu</option>
+                    <option value="Osmaniye">Osmaniye</option>
+                    <option value="Rize">Rize</option>
+                    <option value="Sakarya">Sakarya</option>
+                    <option value="Samsun">Samsun</option>
+                    <option value="Siirt">Siirt</option>
+                    <option value="Sinop">Sinop</option>
+                    <option value="Sivas">Sivas</option>
+                    <option value="Şanlıurfa">Şanlıurfa</option>
+                    <option value="Şırnak">Şırnak</option>
+                    <option value="Tekirdağ">Tekirdağ</option>
+                    <option value="Tokat">Tokat</option>
+                    <option value="Trabzon">Trabzon</option>
+                    <option value="Tunceli">Tunceli</option>
+                    <option value="Uşak">Uşak</option>
+                    <option value="Van">Van</option>
+                    <option value="Yalova">Yalova</option>
+                    <option value="Yozgat">Yozgat</option>
+                    <option value="Zonguldak">Zonguldak</option>
+    </select>
+            
+            <button type="submit" id="sorgula_buton">Sorgula</button>
+        </form>
+    </div>
+    
+    <!-- Ziraat ekleme butonu -->
+    <div>
+        <a href="{{ url_for('ziraat_ekle') }}" class="buton" id="ekle_btn">EKLE</a>
+    </div>
+</body>
+</html>

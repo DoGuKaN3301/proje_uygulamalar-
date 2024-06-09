@@ -1,0 +1,60 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html>
+<head> 
+	<title>C# IDE</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/ide.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="stylesheet" href="/static/css/c_sharp_yuklen.css">
+    <link rel="icon" href="/static/images/icons/c_.ico" type="image/x-icon" /> <!-- c# iconunu koyar-->
+</head> 
+
+<body> <!-- Sayfa içeriği başlangıcı -->
+  <div id ="loading">
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+        <circle r="32" cy="40" cx="40" id="test"></circle>
+    </svg>
+</div>
+
+<div class="loader triangle">
+    <svg viewBox="0 0 86 80">
+        <polygon points="43 8 79 72 7 72"></polygon>
+    </svg>
+</div>
+
+<div class="loader">
+    <svg viewBox="0 0 80 80">
+        <rect height="64" width="64" y="8" x="8"></rect>
+    </svg>
+</div>
+</div>
+<div id="content" style="display: none;">
+
+
+    <ul> <!-- Sıralı liste başlangıcı -->
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a> <!-- Anasayfaya yönlendiren resim bağlantısı -->
+        {% if kullaniciadi %} <!-- Kullanıcı adı kontrolü -->
+            <p id="kullanici">{{ kullaniciadi }}</p> <!-- Kullanıcı adı görüntüleme -->
+        {% endif %}
+        <li class="dropdown"> <!-- Dropdown menü başlangıcı -->
+          <a href="javascript:void(0)" class="dropbtn">Yazılım Dilleri</a> <!-- Dropdown butonu -->
+          <div class="dropdown-content"> <!-- Dropdown içeriği başlangıcı -->
+            <a href="{{ url_for('python') }}">Python</a> <!-- Python sayfasına yönlendiren bağlantı -->
+            <a href="{{ url_for('c_plus') }}">C++/C</a> <!-- C++/C sayfasına yönlendiren bağlantı -->
+            <a href="{{ url_for('c_sharp') }}">C#</a> <!-- C# sayfasına yönlendiren bağlantı -->
+            <a href="{{ url_for('php') }}">PHP</a> <!-- PHP sayfasına yönlendiren bağlantı -->
+          </div>
+        </li>
+
+        <div id="saat"></div> <!-- Saat bilgisini içeren div -->
+
+      </ul> <!-- Sıralı liste sonu -->
+
+    <body> <!-- Sayfa içeriği başka bir body ile devam ediyor, bu doğru değil, düzeltilmeli -->
+        <div data-pym-src="https://www.jdoodle.com/embed/v1/859b73ab37695b88"></div> <!-- JDoodle embed kodunu içeren div -->
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script> <!-- JDoodle script etiketi -->
+    </body>
+    <script src="/static/js/script.js"></script> <!-- Harici JavaScript dosyasını ekleyen etiket -->
+    
+</body> <!-- Sayfa içeriği sonu -->
+
+</html> <!-- HTML belgesi sonu -->

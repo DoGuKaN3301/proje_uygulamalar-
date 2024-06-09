@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- HTML belgesinin başlangıcı ve dil belirleyici (İngilizce) -->
+<head>
+  <meta charset="UTF-8"> <!-- Karakter kodlama seti -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın ekran genişliğine göre görüntüleme -->
+  <title>Bölümler</title> <!-- Sayfa başlığı -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome ikonlarının CSS dosyası -->
+  <link rel="stylesheet" href="/static/css/kg.css"> <!-- Özel CSS dosyası -->
+  <link rel="icon" href="/static/images/icons/213427-200.ico" type="image/x-icon" />
+</head>
+<body> 
+  <div class="login-container" id="login-container"> <!-- Giriş konteynerı -->
+    <img src="/static/images/kg/RESİM.jpg" id="resim" class="resimler" > <!-- Resim 1 -->
+    <img src="/static/images/kg/ress.jpg" id="resim1" class="resimler"> <!-- Resim 2 -->
+    <img src="/static/images/kg/Adsız tasarım (1).jpg" id="resim2" class="resimler"> <!-- Resim 3 -->
+    <img src="/static/images/kg/Adsız tasarım.jpg" id="resim3" class="resimler"> <!-- Resim 4 -->
+    <img src="/static/images/kg/yazilim-sirketi.jpg" id="resim5" class="resimler"> <!-- Resim 5 -->
+    <img src="/static/images/kg/yazılım.jpg" id="resim6" class="resimler"> <!-- Resim 6 -->
+    <form class="login-form" action="{{ url_for('bolumkontrol') }}" method="post"> <!-- Giriş formu -->
+      <h2>GİRİŞ</h2> <!-- Başlık -->
+      <div class="input-group"> <!-- Giriş alanı grupları -->
+        <i class="fa fa-user icon"></i> <!-- Kullanıcı ikonu -->
+        <input class="input-field" type="text" id="username" name="kullaniciadi" placeholder="Kullanıcı adını giriniz" required> <!-- Kullanıcı adı giriş alanı -->
+      </div>
+      <div class="input-group"> <!-- Giriş alanı grupları -->
+        <i class="fas fa-lock icon"></i> <!-- Şifre ikonu -->
+        <input class="input-field" type="password" id="password" name="sifre" placeholder="Şifrenizi giriniz" required> <!-- Şifre giriş alanı -->
+        <span class="toggle-password" onclick="togglePassword()"><i class="fas fa-eye"></i></span> <!-- Şifre göster/gizle ikonu -->
+      </div>
+      
+      <button type="submit">Login</button> <!-- Giriş butonu -->
+      {% if hata %} <!-- Eğer hata varsa -->
+        <script> <!-- JavaScript ile hata mesajını gösterme -->
+          document.addEventListener("DOMContentLoaded", function() {
+            alert("{{ hata }}"); // Hata mesajını alert kutusu ile göster
+          });
+        </script>
+      {% endif %}
+    </form> <!-- Form sonu -->
+  </div> <!-- Giriş konteynerı sonu -->
+  <script src="/static/js/kg.js"></script> <!-- Özel JavaScript dosyası -->
+</body>
+</html>

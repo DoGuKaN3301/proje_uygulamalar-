@@ -1,0 +1,48 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- HTML belgesinin başlangıcı ve dilinin İngilizce olduğu belirtiliyor -->
+<head> <!-- Başlık bilgilerinin başlangıcı -->
+    <meta charset="UTF-8"> <!-- Karakter kodlaması -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın genişliği ve ölçeğinin ayarlanması -->
+    <title>PYTHON IDE</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/ide.css"> <!-- Özel CSS dosyasının bağlantısı -->
+    <link rel="stylesheet" href="/static/css/hamster.css">
+    <link rel="icon" href="/static/images/icons/640px-Python-logo-notext.svg.ico" type="image/x-icon" />
+    
+</head> <!-- Başlık bilgilerinin bitişi -->
+
+<body> <!-- Sayfa içeriğinin başlangıcı -->
+
+  <div id="loading">
+    <div class="loader">
+      <div class="loader-square"></div>
+      <div class="loader-square"></div>
+      <div class="loader-square"></div>
+      <div class="loader-square"></div>
+      <div class="loader-square"></div>
+      <div class="loader-square"></div>
+      <div class="loader-square"></div>
+      </div> 
+    </div>
+    <div id="content" style="display: none;">
+
+    <ul> <!-- Liste başlangıcı -->
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a> <!-- Anasayfa bağlantısı ve logo görüntüsü -->
+        {% if kullaniciadi %} <!-- Kullanıcı adı kontrolü -->
+            <p id="kullanici">{{ kullaniciadi }}</p> <!-- Kullanıcı adı görüntüleme -->
+        {% endif %}
+        <li class="dropdown"> <!-- Dropdown menüsü -->
+          <a href="javascript:void(0)" class="dropbtn">Yazılım Dilleri</a> <!-- Dropdown menüsünün başlığı -->
+          <div class="dropdown-content"> <!-- Dropdown içeriği -->
+            <a href="{{ url_for('python') }}">Python</a> <!-- Python dili bağlantısı -->
+            <a href="{{ url_for('c_plus') }}">C++/C</a> <!-- C++/C dili bağlantısı -->
+            <a href="{{ url_for('c_sharp') }}">C#</a> <!-- C# dili bağlantısı -->
+            <a href="{{ url_for('php') }}">PHP</a> <!-- PHP dili bağlantısı -->
+          </div>
+        </li>
+        <div id="saat"></div> <!-- Saat alanı -->
+    </ul> <!-- Liste bitişi -->
+    
+    <iframe src="https://trinket.io/embed/python/e9dfbea7b7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> <!-- Trinket Python IDE'nin gömülü olduğu iframe -->
+    <script src="/static/js/script.js"></script> <!-- Harici JavaScript dosyasını ekleyen etiket -->
+  </body> <!-- Sayfa içeriğinin bitişi -->
+</html> <!-- HTML belgesinin bitişi -->

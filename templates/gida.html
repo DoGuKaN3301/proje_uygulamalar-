@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html lang="en"> <!-- HTML belgesinin dilini belirten etiket -->
+<head>
+    <meta charset="UTF-8"> <!-- Metin kodlamasını belirten etiket -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın genişliğine ve ölçeğine uyum sağlayan etiket -->
+    <title>Gıda</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/sty.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="stylesheet" href="/static/css/gida.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+    <link rel="icon" href="/static/images/icons/gıda.ico" type="image/x-icon" /> <!--gıda bölümünün sayfasına icon ekler-->
+    <script src="/static/js/script.js"></script>
+</head>
+    <div class="overlay"> <!-- Geçici bir arka plan oluşturan overlay -->
+    <body id="index_arkaplan" background="/static/images/indir.jpg"> <!-- Arka plan resmi -->
+
+    </div> 
+    <ul id="nav"> <!-- Navigasyon menüsü başlangıcı -->
+        {% if kullaniciadi %} <!-- Kullanıcı adı kontrolü -->
+        <p id="kullanici">{{ kullaniciadi }} </p> <!-- Kullanıcı adı -->
+      {% endif %}
+      <div id="cık"> <!-- Çıkış bağlantısını içeren div -->
+      <a href="{{ url_for('cikis') }}" id="cık">CIKIŞ</a> <!-- Çıkış bağlantısı -->
+      </div>
+        
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/indir.jpg" id="navbarrsm" alt=""></a> <!-- Anasayfaya yönlendiren resim bağlantısı -->
+        <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li> <!-- Anasayfa bağlantısı -->
+        <div id="saat"></div>
+          </div>
+        </li>
+      </ul> <!-- Navigasyon menüsü sonu -->
+    <header>
+        <h1>{{ first_char_upper }}  Kalorileri Ve  Özellikler</h1> <!-- Başlık -->
+    </header> <!-- Başlık sonu -->
+    <div class="container" id="fruitsContainer">
+        <!-- Meyveler buraya dinamik olarak eklenecek -->
+    </div> <!-- Meyve konteyneri sonu -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}                                                       <!-- sayfaya hata mesajı göndermek içn kullanılır-->
+            {% for category, message in messages %}
+                <p class="{{ category }}" id = "hata_msj">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+
+
+    <div class="container">
+        {% for adm in gida %} <!-- Gıda listesi döngüsü -->
+        <div class="card"> <!-- Kart bileşeni başlangıcı -->
+            <div class="card-header"> <!-- Kart başlığı -->
+                ID: {{ adm[0] }} <!-- ID -->
+            </div>
+            <div class="card-body"> <!-- Kartın içeriği -->
+                <p><strong>Ad:</strong> {{ adm[1] }}</p> <!-- Ad -->
+                <p><strong>Kalori:</strong> {{ adm[2] }}</p> <!-- Kalori -->
+                <p><strong>Durum:</strong> {{ adm[3] }}</p> <!-- Durum -->
+                <p><strong>Katogori:</strong> {{ adm[4] }}</p> <!-- Kategori -->
+            </div>
+            <div class="card-footer"> <!-- Kart altbilgisi -->
+                <a href="/gida/guncelle/{{ adm[0] }}" class="buton">Güncelle</a> <!-- Güncelleme bağlantısı -->
+                <a href="/gida/sil/{{ adm[0] }}" class="buton">Sil</a> <!-- Silme bağlantısı -->
+            </div>
+        </div> <!-- Kart bileşeni sonu -->
+        {% endfor %} <!-- Döngü sonu -->
+        
+    </div> <!-- Ana konteyner sonu -->
+    <div>
+
+    
+    </div>
+<div id="sorgu"> <!-- Sorgulama formunu içeren div -->
+    <form action="{{ url_for('gida_sorgu') }}" method="post"> <!-- Sorgulama formu başlangıcı -->
+        <select id="durum" name="durum" required> <!-- Durum seçimi -->
+            <option value="yararlı">Yararlı</option> <!-- Yararlı seçeneği -->
+            <option value="zararlı">Zararlı</option> <!-- Zararlı seçeneği -->
+        </select>
+        <select id="katogori" name="katogori" required> <!-- Kategori seçimi -->
+            <option value="meyve" selected>Meyve</option> <!-- Meyve seçeneği -->
+            <option value="sebze">Sebze</option> <!-- Sebze seçeneği -->
+            <option value="içecek">İçecek</option> <!-- İçecek seçeneği -->
+            <option value="fast-food">Fast-Food</option> <!-- Fast food seçeneği -->
+        </select>
+        <button type="submit" id="sorgula_buton">Sorgula</button> <!-- Sorgula düğmesi -->
+    </form> <!-- Sorgulama formu sonu -->
+</div> <!-- Sorgulama divi sonu -->
+    <div>
+        
+        <a href="{{ url_for('gida_ekle') }}" class="buton" id="gida_ekle">EKLE</a> <!-- Yeni gıda ekleme bağlantısı -->
+    </div> <!-- Yeni gıda ekleme divi sonu -->
+   
+</body>
+</html>

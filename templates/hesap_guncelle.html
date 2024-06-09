@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html lang="en"> <!-- HTML belgesinin dilini belirten etiket -->
+<head>
+    <meta charset="UTF-8"> <!-- Metin kodlamasını belirten etiket -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Cihazın genişliğine ve ölçeğine uyum sağlayan etiket -->
+    <title>Hesap Ayarları</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="/static/css/hesap.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+</head>
+<body>
+    <div class="container"> <!-- Ana konteyner -->
+        <div class="card"> <!-- Kart bileşeni -->
+            <div class="card-header"> <!-- Kart başlığı -->
+                Hesap Ayarları
+            </div>
+            <div class="card-body"> <!-- Kart gövdesi -->
+                <form action="{{ url_for('kullanici_ayarlari') }}" method="post" enctype="multipart/form-data"> <!-- Form başlangıcı -->
+                    <label for="ad">Ad</label> <!-- Ad alanı etiketi -->
+                    <input type="text" id="ad" name="ad" value="{{ personel[1] }}" placeholder="Adınızı giriniz" required readonly> <!-- Ad giriş alanı -->
+                    <label for="email">E-Mail</label> <!-- E-posta alanı etiketi -->
+                    <input type="email" id="email" name="email" value="{{ personel[2] }}" placeholder="E-Mail giriniz" required readonly> <!-- E-posta giriş alanı -->
+                    <label for="sifre">Şifre</label> <!-- Şifre alanı etiketi -->
+                    <input type="password" id="sifre" name="sifre" value="{{ personel[3] }}" placeholder="Yeni şifre giriniz" readonly> <!-- Şifre giriş alanı -->
+                    <button id = buttongeri ><a href=""></a></button> <!-- Formu göndermek için düğme -->
+                    {% if hata %} <!-- Hata kontrolü -->
+                        <p class="error">{{ hata }}</p> <!-- Hata mesajı -->
+                    {% endif %}
+                </form> <!-- Form sonu -->
+            </div> <!-- Kart gövdesi sonu -->
+        </div> <!-- Kart bileşeni sonu -->
+    </div> <!-- Ana konteyner sonu -->
+</body>
+</html>

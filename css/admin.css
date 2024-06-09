@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #950f8f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+    margin-top: 10px;
+
+}
+
+.button:hover {
+    background-color: #0056b3;
+    
+}
+#geri{
+    justify-content: center;
+    display: flex;
+   
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: white; /* Beyaz bir renk katmanı ekleyin */
+    opacity: 0.9; /* Opaklık değeri 0 ile 1 arasında olmalıdır */
+    z-index: -1; /* Arka plan resminin altında kalacak şekilde z-index ayarı */
+  
+
+  }
+
+body{
+    
+    background-repeat:no-repeat;
+    background-position: center top;
+}
+
+

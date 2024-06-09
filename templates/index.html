@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html> <!-- HTML belgesinin başlangıcı -->
+<head>
+  <title>Anasayfa</title> <!-- Sayfa başlığı -->
+  <link rel="stylesheet" href="/static/css/styles.css"> <!-- Harici CSS dosyasını ekleyen etiket -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Harici Font Awesome CSS dosyasını ekleyen etiket -->
+  <link rel="icon" href="/static/images/icons/house-icon.ico" type="image/x-icon" />
+  <script src="/static/js/script.js"></script>
+</head>
+    <div class="overlay"> <!-- Geçici bir arka plan oluşturan overlay -->
+      
+      <body id="index_arkaplan" background="/static/images/indir.jpg"> <!-- Arka plan resmi -->
+    
+    </div> 
+  <ul id="nav"> <!-- Menü başlangıcı -->
+    {% if kullaniciadi %} <!-- Kullanıcı adı kontrolü -->
+    <p id="kullanici">{{ kullaniciadi }}</p> <!-- Kullanıcı adı görüntüleme -->
+    {% endif %}
+
+    <div id="cık"> <!-- Çıkış butonu başlangıcı -->
+      <a href="{{ url_for('cikis') }}" id="cıkıs">ÇIKIŞ</a> <!-- Çıkış butonu -->
+    </div>
+  
+    <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a> <!-- Logo -->
+    <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li> <!-- Anasayfa linki -->
+    <li><a href="{{ url_for('bolum') }}">Bölümler</a></li> <!-- Bölümler linki -->
+    <li id="grs"><a href="{{ url_for('giris') }}"><i class="fas fa-home ev-icon"></i></a></li> <!-- Giriş linki -->
+    <a href="{{ url_for('cikis') }}" id="cık">CIKIŞ</a> <!-- Tekrar çıkış butonu -->
+    <button id = "yapayz"> Pick up!
+    </button>
+    <a href="{{ url_for('yapay_zeka') }}" id = "yapay">Yapay Zeka</a>
+    
+    <div id="saat"></div> <!-- Saat bileşeni -->
+  </ul> <!-- Menü sonu -->
+  <div class="bildir" align="center"> <!-- Bildirim bileşeni başlangıcı -->
+    <div class="content"> <!-- İçerik başlangıcı -->
+      <div class="yazi"> <!-- Yazı başlangıcı -->
+        <h1>Anasayfaya hoşgeldiniz</h1> <!-- Başlık -->
+        <p id="degisenYazi"> </p> 
+      </div> <!-- Yazı sonu -->
+      <div class="slayt-container"> <!-- Slayt gösterisi konteyneri başlangıcı -->
+        <img class="slayt-foto" src="/static/images/giris/1.jpg" alt="Fotoğraf 1"> <!-- Slayt fotoğrafları -->
+        <img class="slayt-foto" src="/static/images/giris/2.jpg" alt="Fotoğraf 2">
+        <img class="slayt-foto" src="/static/images/giris/3.jpg" alt="Fotoğraf 3">
+        <img class="slayt-foto" src="/static/images/giris/4.jpg" alt="Fotoğraf 4">
+        <img class="slayt-foto" src="/static/images/giris/5.jpg" alt="Fotoğraf 5">
+      </div> <!-- Slayt gösterisi konteyneri sonu -->
+      
+    </div> <!-- İçerik sonu -->
+  </div> <!-- Bildirim bileşeni sonu -->
+
+
+
+  <div id="duyuruAlanı">
+    <!-- Duyuruların listeleneceği liste -->
+    <ul id="duyuruListesi"></ul>
+</div>
+
+{% if hata %}
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+							alert("{{ hata }}");
+						});
+					</script>
+				{% endif %}
+
+
+  <script src="/static/js/slayt.js"></script> <!-- Harici JavaScript dosyasını ekleyen etiket -->
+</body> <!-- Sayfa gövdesi sonu -->
+</html> <!-- HTML belgesinin sonu -->

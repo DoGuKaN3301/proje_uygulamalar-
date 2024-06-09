@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- HTML belgesinin doctype'ı -->
+<html> <!-- HTML belgesinin başlangıcı -->
+  <title>Bilgisayar hühendisi</title> <!-- Sayfa başlığı -->
+<head>
+  <script src="/static/js/script.js"></script> <!-- JavaScript dosyasının bağlantısı -->
+  <link rel="stylesheet" href="/static/css/styles.css"> <!-- Özel CSS dosyasının bağlantısı -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome kütüphanesinin CSS dosyasının bağlantısı -->
+  <link rel="icon" href="/static/images/icons/masaustu-bilgisayar.ico" type="image/x-icon" />  <!-- bilgisayar mühendisi bölümüne icon ekler -->
+</head>
+<div class="overlay"> <!-- Örtü katmanı -->
+  <body id="index_arkaplan" background="/static/images/indir.jpg"> <!-- Body etiketi ve arka plan resmi -->
+</div>
+<ul> <!-- Liste başlangıcı -->
+  <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a> <!-- Anasayfa bağlantısı ve logo görüntüsü -->
+  <li><a href="#news">Belgeler</a></li> <!-- Belgeler bağlantısı -->
+  <li class="dropdown"> <!-- Dropdown menüsü -->
+    <a href="javascript:void(0)" class="dropbtn">Yazılım Dilleri</a> <!-- Dropdown menüsünün başlığı -->
+    <div class="dropdown-content"> <!-- Dropdown içeriği -->
+      <a href="{{ url_for('python') }}">Python</a> <!-- Python dili bağlantısı -->
+      <a href="{{ url_for('c_plus') }}">C++/C</a> <!-- C++/C dili bağlantısı -->
+      <a href="{{ url_for('c_sharp') }}">C#</a> <!-- C# dili bağlantısı -->
+      <a href="{{ url_for('php') }}">PHP</a> <!-- PHP dili bağlantısı -->
+    </div>
+  </li>
+  <div id="saat"></div> <!-- Saat alanı -->
+</ul> <!-- Liste bitişi -->
+</body>
+</html>
